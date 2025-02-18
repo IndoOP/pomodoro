@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <h1>Pomodoro</h1>
+    <span class="dash"></span>
+    <div class="c1">
+        <div id="quote"></div>
+        <div class="clock">
+            <div class="time">
+                <span id="hh"></span>:
+                <span id="mm"></span>:
+                <span id="ss"></span>
+            </div>
+            <span class="hand hr"></span>
+            <span class="hand min"></span>
+            <span class="hand sec"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="status day" id="day">
+        <div class="sun"></div>
+        <div class="suntxt">Here comes the sun doo-doo-</div>
+    </div>
+    <div class="status night" id="night">
+        <div class="moon"></div>
+        <div class="suntxt">Dark is the night.</div>
+    </div>
+
+    <div class="pomo">
+        <div class="container" id="container">
+            <h2 id="stat">Hustle Timer</h2>
+            <span class="dash"></span>
+            <span class="timer">
+                <span id="mint" class="box">25</span> : <span id="sect" class="box">00</span>
+            </span>
+            <div class="controls">
+                <span id="start" class="btn">Start</span>
+                <span id="pause" class="btn">Pause</span>
+                <span id="reset" class="btn">Reset</span>
+            </div>
+            <div class="session-controls">
+                <span id="work" class="btn">Time+</span>
+                <span id="short-break" class="btn">Short Break</span>
+                <span id="long-break" class="btn">Long Break</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="todo" id="todo">
+        <span class="btn" id="create" style="position: absolute; margin-left: 90%; transform: translateX(-90%); transform: translateY(-180%)">+ Add Task</span>
+    </div>
+    <footer>
+        Made with fun, by Dhruv Shaury.  <a href="https://youtube.com/@1ndo." style="text-decoration: none; color: aliceblue;">  <i class="fa-brands fa-youtube"></i></a>
+    </footer>
+</body>
+<script src="https://kit.fontawesome.com/e22e73ab49.js" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Kalam:wght@300;400;700&display=swap');
+
+body{
+    background-color: rgb(0, 9, 24);
+    font-family: "Funnel Sans", serif;
+    color: rgb(203, 231, 255);
+    cursor: url('https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-bee-cartoon-illustrations-cute-holding-a-flower-png-image_5684056.png');
+}
+::-webkit-scrollbar {
+  width: 6px; /* Thin scrollbar */
+  transition: 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(2, 19, 48); /* Dark background for track */
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(36, 105, 165); /* Scrollbar color */
+  border-radius: 10px;
+  transition: 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 47, 88); /* Darker on hover */
+}
+.c1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.clock{
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 300px;
+    background-color: rgb(255, 196, 0);
+    border-radius: 50%;
+    z-index: 1;
+    transition: 1s ease-in-out;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .hr {
+    width: 6px;
+    height: 100px;
+    background: rgb(0, 89, 255);
+    border-radius: 5px;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .min {
+    width: 4px;
+    height: 120px;
+    background: rgb(0, 52, 97);
+    border-radius: 5px;
+    transition: transform 1s ease-in-out;
+  }
+  
+  .sec {
+    width: 2px;
+    height: 135px;
+    background: rgb(255, 51, 0);
+    border-radius: 5px;
+    transition: transform 1s ease-in-out;
+  }
+  .dot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 51, 0);
+    box-shadow: 0px 0px 10px rgb(0, 18, 34);
+    z-index: 4;
+  }
+  .clock:hover{
+    background-color: rgb(0, 9, 24);
+    height: 400px;
+    width: 400px;
+  }
+  .clock:hover .hand{
+    opacity: 70%;
+  }
+
+  #quote{
+    display: flex;
+    transform: translateX(-50%);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    max-height: 400px;
+    max-width: 400px;
+    background-color: rgb(185, 222, 255);
+    color: rgb(0, 136, 255);
+    font-weight: 1000;
+    font-size: 30px;
+    border-radius: 20px;
+    margin-left: 100px;
+    transition: 1s ease-in-out;
+    cursor: default;
+  }
+  #quote:hover{
+    max-height: 500px;
+    max-width: 500px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: rgb(0, 9, 24);
+    box-shadow: 0px 0px 20px rgba(175, 204, 255, 0.295);
+    color: rgb(255, 196, 0);
+    font-size: 35px;
+  }
+  h1{
+    padding: 1px;
+    transition: 1s ease-in-out;
+    cursor: pointer;
+    font-size: 50px;
+  }
+  h1:hover{
+    color: rgb(255, 196, 0);
+    font-size: 70px;
+  }
+  h1:hover + .dash{
+    width: 100px;
+    background-color: rgb(203, 231, 255);
+  }
+  .dash{
+    display: block;
+    width: 20px;
+    height: 5px;
+    background-color: rgb(255, 196, 0);
+    transition: 1s ease-in-out;
+  }
+
+  .time{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
+    position: absolute;
+    font-size: 50px;
+    font-weight: 1000;
+    padding: 10px;
+    text-align: center;
+    margin-left: 20px;
+    z-index: -1;
+    width: 300px;
+    opacity: 0%;
+    transition: 1s ease-in-out;
+  }
+  .clock:hover .time{
+    width: 400px;
+    opacity: 100%;
+  }
+  .sun {
+    width: 150px;
+    height: 150px;
+    background-color: #FFD700; /* Sun's color */
+    border-radius: 50%;
+    position: relative;
+    transition: 1s ease-in-out;
+    animation: spin 10s linear infinite; /* Spins the sun */
+  }
+  
+  .sun::before,
+  .sun::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 50%;
+  }
+  
+  .sun::before {
+    transform: rotate(45deg);
+    width: 100%;
+    height: 2px;
+    background-color: #FFA500; /* Rays' color */
+  }
+  
+  .sun::after {
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 2px;
+    background-color: #FFA500; /* Rays' color */
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .status{
+    position: absolute;
+    font-weight: 500;
+    font-size: 30px;
+    width: 300px;
+    margin-left: 80%;
+    transform: translateY(-180%);
+    transition: 1s ease-in-out;
+  }
+  .status:hover .sun{
+    height: 200px;
+    width: 200px;
+    transform: translateY(-140%);
+  }
+  .status:hover .moon{
+    height: 200px;
+    width: 200px;
+    transform: translateY(-140%);
+  }
+  .status:hover .moon::before{
+    height: 200px;
+    width: 200px;
+    /*transform: translateY(-140%);*/
+  }
+
+  .moon {
+    width: 150px;
+    height: 150px;
+    background-color: #f5f3ce; /* Light yellowish moon */
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 15px rgba(255, 255, 180, 0.8); /* Soft glow */
+    animation: glow 4s ease-in-out infinite alternate, float 6s ease-in-out infinite;
+    transition: 1s ease-in-out;
+  }
+  
+  /* Creating the crescent shape */
+  .moon::before {
+    content: "";
+    position: absolute;
+    z-index: 4;
+    transition: 1s ease-in-out;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(0, 9, 24); /* Same as background to cut out shape */
+    border-radius: 50%;
+    top: -10px;
+    left: 15px; /* Moves it slightly to create the crescent effect */
+  }
+  
+  /* Glowing effect animation */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 255, 180, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(255, 255, 180, 1);
+    }
+  }
+  
+  /* Floating effect */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .night{
+    transform: translateY(-210%);
+  }
+
+  
+  .pomo .container {
+    background-color: rgb(145, 187, 224);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 400px;
+    margin-left: 50%;
+    margin-top: 50px;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    padding: 20px;
+    transition: 1s ease-in-out;
+    margin-bottom: 100px;
+  }
+  .pomo .container:hover{
+    background-color: rgb(0, 9, 24);
+    box-shadow: 20px 10px 0 rgb(145, 187, 224),
+                0px 0px 20px rgb(145, 187, 224);
+    width: 70%;
+  }
+  
+  .pomo .container:hover h2{
+    color: rgb(145, 187, 224);
+    font-size: 50px;
+    font-weight: 1000;
+  }
+  .pomo .container:hover .timer{
+    font-size: 60px;
+    font-weight: 1000;
+  }
+  .pomo .container:hover .dash{
+    width: 100px;
+  }
+  .pomo .container h2{
+    font-size: 40px;
+    color: rgb(0, 9, 24);
+    transition: 1s ease-in-out;
+  }
+  .pomo .container .timer{
+    padding: 10px;
+    margin: 10px 10px 10px 10px;
+    font-size: 50px;
+    font-weight: 1000;
+    color: rgb(255, 196, 0);
+    transition: 1s ease-in-out;
+  }
+  .pomo .container .timer .box{
+    position: relative;
+    padding: 15px;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(0, 9, 24);
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .controls {
+    padding: 10px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px;
+    background-color: rgb(255, 196, 0);
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 rgb(77, 105, 129);
+    cursor: pointer;
+    text-shadow: 0 0 10px rgb(56, 76, 94);
+    transition: 0.5s ease-in-out;
+  }
+  .btn:hover {
+    background-color: rgb(77, 105, 129);
+    box-shadow: 5px 0px 0 rgb(77, 105, 129), -5px 0 0 rgb(77, 105, 129);
+  }
+  .pomo .active{
+    background-color: rgb(0, 9, 24);
+    box-shadow: 20px 10px 0 rgb(145, 187, 224),
+                0px 0px 20px rgb(145, 187, 224);
+    width: 70%;
+  }
+  .pomo .active h2{
+    color: rgb(145, 187, 224);
+    font-size: 30px;
+    font-weight: 1000;
+  }
+  .pomo .active .timer{
+    font-size: 70px;
+    font-weight: 1000;
+  }
+  .pomo .active .dash{
+    width: 200px;
+  }
+
+  footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: none;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(0, 5, 14);
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .bubble {
+    position: absolute;
+    background: rgb(203, 231, 255);
+    box-shadow: 0 0 20px rgb(145, 187, 224);
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(0, 5, 14);
+    font-weight: 800;
+    cursor: pointer;
+    z-index: 1;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .bubble:hover {
+    transform: scale(2);
+  } 
