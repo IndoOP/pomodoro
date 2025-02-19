@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Kalam:wght@300;400;700&display=swap');
 
 body{
-    background-color: rgb(0, 9, 24);
-    font-family: "Funnel Sans", serif;
-    color: rgb(203, 231, 255);
-    cursor: url('https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-bee-cartoon-illustrations-cute-holding-a-flower-png-image_5684056.png');
+  margin: none;
+  overflow-x: hidden;
+  background-color: rgb(0, 9, 24);
+  font-family: "Funnel Sans", serif;
+  color: rgb(203, 231, 255);
 }
 ::-webkit-scrollbar {
   width: 6px; /* Thin scrollbar */
@@ -28,6 +29,7 @@ body{
 }
 .c1{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
 }
@@ -37,8 +39,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
-    width: 300px;
+    height: 30vh;
+    width: 30vh;
     background-color: rgb(255, 196, 0);
     border-radius: 50%;
     z-index: 1;
@@ -57,7 +59,7 @@ body{
   
   .hr {
     width: 6px;
-    height: 100px;
+    height: 8vh;
     background: rgb(0, 89, 255);
     border-radius: 5px;
     transition: transform 1s ease-in-out;
@@ -65,7 +67,7 @@ body{
   
   .min {
     width: 4px;
-    height: 120px;
+    height: 10vh;
     background: rgb(0, 52, 97);
     border-radius: 5px;
     transition: transform 1s ease-in-out;
@@ -73,7 +75,7 @@ body{
   
   .sec {
     width: 2px;
-    height: 135px;
+    height: 12vh;
     background: rgb(255, 51, 0);
     border-radius: 5px;
     transition: transform 1s ease-in-out;
@@ -85,6 +87,17 @@ body{
     background-color: rgb(255, 51, 0);
     box-shadow: 0px 0px 10px rgb(0, 18, 34);
     z-index: 4;
+  }
+  a{
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  i{
+    color: rgb(185, 222, 255);
+    transition: 0.5s ease-in-out;
+  }
+  i:hover{
+    color: rgb(106, 186, 255);
   }
   .clock:hover{
     background-color: rgb(0, 9, 24);
@@ -102,20 +115,20 @@ body{
     align-items: center;
     justify-content: center;
     padding: 10px;
-    max-height: 400px;
-    max-width: 400px;
+    max-height: 40vh;
+    max-width: 50vh;
     background-color: rgb(185, 222, 255);
     color: rgb(0, 136, 255);
     font-weight: 1000;
     font-size: 30px;
     border-radius: 20px;
-    margin-left: 100px;
+    margin-left: 10vh;
     transition: 1s ease-in-out;
     cursor: default;
   }
   #quote:hover{
-    max-height: 500px;
-    max-width: 500px;
+    max-height: 50vh;
+    max-width: 60vh;
     padding-left: 60px;
     padding-right: 60px;
     background-color: rgb(0, 9, 24);
@@ -166,8 +179,8 @@ body{
     opacity: 100%;
   }
   .sun {
-    width: 150px;
-    height: 150px;
+    width: 15vh;
+    height: 15vh;
     background-color: #FFD700; /* Sun's color */
     border-radius: 50%;
     position: relative;
@@ -215,30 +228,28 @@ body{
     position: absolute;
     font-weight: 500;
     font-size: 30px;
-    width: 300px;
+    width: 15vh;
     margin-left: 80%;
-    transform: translateY(-180%);
     transition: 1s ease-in-out;
   }
   .status:hover .sun{
-    height: 200px;
-    width: 200px;
+    height: 20vh;
+    width: 20vh;
     transform: translateY(-140%);
   }
   .status:hover .moon{
-    height: 200px;
-    width: 200px;
-    transform: translateY(-140%);
+    height: 20vh;
+    width: 20vh;
   }
   .status:hover .moon::before{
-    height: 200px;
-    width: 200px;
+    height: 20vh;
+    width: 20vh;
     /*transform: translateY(-140%);*/
   }
 
   .moon {
-    width: 150px;
-    height: 150px;
+    width: 15vh;
+    height: 15vh;
     background-color: #f5f3ce; /* Light yellowish moon */
     border-radius: 50%;
     position: relative;
@@ -253,8 +264,8 @@ body{
     position: absolute;
     z-index: 4;
     transition: 1s ease-in-out;
-    width: 150px;
-    height: 150px;
+    width: 14vh;
+    height: 14vh;
     background-color: rgb(0, 9, 24); /* Same as background to cut out shape */
     border-radius: 50%;
     top: -10px;
@@ -283,12 +294,10 @@ body{
       transform: translateY(0);
     }
   }
-
-  .night{
-    transform: translateY(-210%);
+  .pomo{
+    display: flex;
+    flex-direction: column;
   }
-
-  
   .pomo .container {
     background-color: rgb(145, 187, 224);
     position: relative;
@@ -394,7 +403,7 @@ body{
     align-items: center;
     justify-content: center;
     margin: none;
-    width: 100%;
+    width: 100vw;
     height: 50px;
     background-color: rgb(0, 5, 14);
     font-size: 20px;
@@ -428,4 +437,227 @@ body{
 
   .bubble:hover {
     transform: scale(2);
-  } 
+  }
+
+  .loading{
+    margin: none;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0, 9, 24);
+    z-index: 10;
+    overflow: hidden;
+  }
+  body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .loading .circle{
+    display: block;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: rgb(203, 231, 255);
+    animation: float 2s ease-in-out infinite;
+  }
+  .loading .circle::before{
+    content: "";
+    position: relative;
+    display: block;
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    background-color: rgb(0, 9, 24);
+    animation: float 2s ease-in-out infinite;
+  }
+  .loading .circle::after{
+    content: "";
+    position: relative;
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgb(255, 196, 0);
+    transform: translateY(-180%);
+    animation: loading 2s ease-in-out infinite;
+  }
+
+  @keyframes loading1 {
+    0% {
+      transform: translateY(-180%);
+    }
+    50% {
+      transform: translateY(-200%);
+    }
+    100% {
+      transform: translateY(-180%);
+    }
+  }
+
+  @media (max-width: 1300px) { /* Styles for screens smaller than 600px */
+    .c1 {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+    #quote{
+      transform: translateX(0);
+      margin-top: 10%;
+      font-size: 20px;
+    }
+    #quote:hover{
+      transform: translateX(0);
+      margin-top: 10%;
+      font-size: 25px;
+    }
+    .status{
+      font-size: 20px;
+      width: 10vh;
+      height: 10vh;
+      transform: translate(0,-20vh);
+    }
+    .suntxt{
+      width: 15vh;
+    }
+    .sun {
+      width: 10vh;
+      height: 10vh;
+    }
+    .status:hover{
+      font-size: 14px;
+    }
+    .status:hover .sun{
+      height: 15vh;
+      width: 15vh;
+      transform: translateY(-140%);
+    }
+    .status:hover .moon{
+      height: 15vh;
+      width: 15vh;
+      transform: translateX(-5vh);
+    }
+    .status:hover .moon::before{
+      height: 15vh;
+      width: 15vh;
+      transform: translateX(-5vh);
+      /*transform: translateY(-140%);*/
+    }
+  
+    .moon {
+      width: 10vh;
+      height: 10vh;
+      background-color: #f5f3ce; /* Light yellowish moon */
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 0 15px rgba(255, 255, 180, 0.8); /* Soft glow */
+      animation: glow 4s ease-in-out infinite alternate, float 6s ease-in-out infinite;
+      transition: 1s ease-in-out;
+    }
+    
+    /* Creating the crescent shape */
+    .moon::before {
+      content: "";
+      position: absolute;
+      z-index: 4;
+      transition: 1s ease-in-out;
+      width: 10vh;
+      height: 10vh;
+      background-color: rgb(0, 9, 24); /* Same as background to cut out shape */
+      border-radius: 50%;
+      top: -10px;
+      left: 15px; /* Moves it slightly to create the crescent effect */
+    }
+    .night{
+      transform: translateY(-13vh);
+    }
+    .container{
+      flex-direction: column;
+      justify-content: center;
+      height: 40vh;
+      width: 110vw;
+      padding: none;
+      margin: none;
+      margin-top: 10vh;
+    }
+    .btn{
+      font-size: 10px;
+      padding: 5px;
+      margin: 2px 2px 2px 2px;
+    }
+    .pomo .container h2{
+      font-size: 30px;
+      color: rgb(0, 9, 24);
+      transition: 1s ease-in-out;
+    }
+    .pomo .container .timer{
+      padding: 10px;
+      margin: 10px 10px 10px 10px;
+      font-size: 30px;
+      font-weight: 1000;
+      color: rgb(255, 196, 0);
+      transition: 1s ease-in-out;
+    }
+    .pomo .container .timer .box{
+      position: relative;
+      padding: 15px;
+      height: 100px;
+      width: 100px;
+      background-color: rgb(0, 9, 24);
+      border-radius: 20px;
+      cursor: pointer;
+    }
+  
+    .controls {
+      padding: 10px;
+    }
+    .btn:hover {
+      background-color: rgb(77, 105, 129);
+      box-shadow: 5px 0px 0 rgb(77, 105, 129), -5px 0 0 rgb(77, 105, 129);
+    }
+    .pomo .active{
+      background-color: rgb(0, 9, 24);
+      box-shadow: 20px 10px 0 rgb(145, 187, 224),
+                  0px 0px 20px rgb(145, 187, 224);
+      width: 70%;
+    }
+    .pomo .active h2{
+      color: rgb(145, 187, 224);
+      font-size: 20px;
+      font-weight: 1000;
+    }
+    .pomo .active .timer{
+      font-size: 40px;
+      font-weight: 1000;
+    }
+    .pomo .container:hover{
+      background-color: rgb(0, 9, 24);
+      box-shadow: 20px 10px 0 rgb(145, 187, 224),
+                  0px 0px 20px rgb(145, 187, 224);
+      width: 60%;
+    }
+    
+    .pomo .container:hover h2{
+      color: rgb(145, 187, 224);
+      font-size: 35px;
+      font-weight: 1000;
+    }
+    .pomo .container:hover .timer{
+      font-size: 35px;
+      font-weight: 1000;
+    }
+    h1{
+      font-size: 40px;
+    }
+    h1:hover{
+      font-size: 50px;
+    }
+    #create{
+      font-size: 20px;
+    }
+    body{
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+}

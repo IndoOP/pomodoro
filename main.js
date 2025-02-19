@@ -1,3 +1,8 @@
+function load() {
+    document.querySelector('.loading').style.display="none";
+    document.querySelector('body').style.overflowY="visible";
+};
+
 function updateClock() {
     const now = new Date();
     const hours = now.getHours() % 12;  // Convert 24h to 12h format
@@ -90,6 +95,8 @@ function updateClock() {
 
     //startTimer
     start.addEventListener('click', function() {
+        let sound = new Audio("tick.mp3"); 
+        sound.play();
         start.textContent = "Start";
         if (!isRunning) {
             stat.textContent = "Timer On";

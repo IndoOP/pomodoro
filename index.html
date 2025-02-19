@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro</title>
+    <title>Dopomoro</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="load()">
+    <div class="loading">
+        <div class="circle"></div>
+    </div>
     <h1>Pomodoro</h1>
     <span class="dash"></span>
+    <div class="status day" id="night">
+        <div class="sun"></div>
+        <div class="suntxt">Here comes
+            the sun doo-doo-</div>
+    </div>
+    <div class="status night" id="day">
+        <div class="moon"></div>
+        <div class="suntxt">Dark is the night.</div>
+    </div>
     <div class="c1">
         <div id="quote"></div>
         <div class="clock">
@@ -22,14 +34,6 @@
             <span class="hand sec"></span>
             <span class="dot"></span>
         </div>
-    </div>
-    <div class="status day" id="day">
-        <div class="sun"></div>
-        <div class="suntxt">Here comes the sun doo-doo-</div>
-    </div>
-    <div class="status night" id="night">
-        <div class="moon"></div>
-        <div class="suntxt">Dark is the night.</div>
     </div>
 
     <div class="pomo">
@@ -50,10 +54,9 @@
                 <span id="long-break" class="btn">Long Break</span>
             </div>
         </div>
-    </div>
-
-    <div class="todo" id="todo">
-        <span class="btn" id="create" style="position: absolute; margin-left: 90%; transform: translateX(-90%); transform: translateY(-180%)">+ Add Task</span>
+        <div class="todo" id="todo">
+            <span class="btn" id="create" style="position: absolute; margin-top: 10px; margin-left: 80%; transform: translateX(-80%); transform: translateY(-180%)">+ Add Task</span>
+        </div>
     </div>
     <footer>
         Made with fun, by Dhruv Shaury.  <a href="https://youtube.com/@1ndo." style="text-decoration: none; color: aliceblue;">  <i class="fa-brands fa-youtube"></i></a>
