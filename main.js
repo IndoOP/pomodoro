@@ -95,10 +95,10 @@ function updateClock() {
 
     //startTimer
     start.addEventListener('click', function() {
-        let sound = new Audio("tick.mp3"); 
-        sound.play();
         start.textContent = "Start";
         if (!isRunning) {
+            let sound = new Audio("tick.mp3"); 
+            sound.play();
             stat.textContent = "Timer On";
             isRunning = true;
             timer = setInterval(() => {
