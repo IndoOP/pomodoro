@@ -43,6 +43,13 @@ function updateClock() {
         document.getElementById('hh').textContent = hh;
         document.getElementById('mm').textContent = mm;
         document.getElementById('ss').textContent = ss;
+        if(document.hidden){
+            clearInterval(updateDisplay);
+            timeElapsed = Date.now() - startTime;
+            timeElapsed = Math.floor(timeElapsed/1000);
+            timeLeft=timeElapsed;
+            updateDisplay();
+        }
     }
 
     // Update the time every second
@@ -96,18 +103,15 @@ function updateClock() {
     //startTimer
     start.addEventListener('click', function() {
         start.textContent = "Start";
+        let startTime = Date.now();
         if (!isRunning) {
             let sound = new Audio("tick.mp3"); 
             sound.play();
             stat.textContent = "Timer On";
             isRunning = true;
-            startTime = Date.now();
             timer = setInterval(() => {
-                let currentTime = Date.now();
-                let elapsedTime = Math.floor((currentTime - startTime) / 1000);
-
-                if (timeLeft - elapsedTime > 0) {
-                    timeLeft = timeLeft - 1;
+                if(timeLeft > 0) {
+                    timeLeft--;
                     cont.classList.add("active");
                     updateDisplay();
                 } else {
@@ -119,31 +123,6 @@ function updateClock() {
                     isRunning = false;
                 }
             }, 1000);
-
-            document.addEventListener("visibilitychange", () => {
-                if (document.hidden) {
-                    clearInterval(timer); // Pause timer when tab is hidden
-                } else if (isRunning) {
-                    startTime = Date.now() - (timeLeft * 1000 - (Date.now() - startTime)); // Correct elapsed time
-                    timer = setInterval(() => {
-                        let currentTime = Date.now();
-                        let elapsedTime = Math.floor((currentTime - startTime) / 1000);
-
-                        if (timeLeft - elapsedTime > 0) {
-                            timeLeft = timeLeft - 1;
-                            cont.classList.add("active");
-                            updateDisplay();
-                        } else {
-                            clearInterval(timer);
-                            alert('Time is up!');
-                            let sound = new Audio("tick.mp3"); 
-                            sound.play();
-                            cont.classList.remove("active");
-                            isRunning = false;
-                        }
-                    }, 1000);
-                }
-            });
         }
     });
 
