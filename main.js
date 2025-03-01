@@ -103,11 +103,11 @@ function updateClock() {
             isRunning = true;
             startTime = Date.now();
             timer = setInterval(() => {
-                let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-                let remaining = timeLeft - elapsedTime;
+                let currentTime = Date.now();
+                let elapsedTime = Math.floor((currentTime - startTime) / 1000);
 
-                if (remaining > 0) {
-                    timeLeft = remaining;
+                if (timeLeft - elapsedTime > 0) {
+                    timeLeft = timeLeft - 1;
                     cont.classList.add("active");
                     updateDisplay();
                 } else {
@@ -124,13 +124,13 @@ function updateClock() {
                 if (document.hidden) {
                     clearInterval(timer); // Pause timer when tab is hidden
                 } else if (isRunning) {
-                    startTime = Date.now() - (timeLeft * 1000 - (Date.now() - startTime)); // Adjust for lost time
+                    startTime = Date.now() - (timeLeft * 1000 - (Date.now() - startTime)); // Correct elapsed time
                     timer = setInterval(() => {
-                        let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
-                        let remaining = timeLeft - elapsedTime;
+                        let currentTime = Date.now();
+                        let elapsedTime = Math.floor((currentTime - startTime) / 1000);
 
-                        if (remaining > 0) {
-                            timeLeft = remaining;
+                        if (timeLeft - elapsedTime > 0) {
+                            timeLeft = timeLeft - 1;
                             cont.classList.add("active");
                             updateDisplay();
                         } else {
