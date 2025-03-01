@@ -101,9 +101,13 @@ function updateClock() {
             sound.play();
             stat.textContent = "Timer On";
             isRunning = true;
+            startTime = Date.now();
             timer = setInterval(() => {
-                if(timeLeft > 0) {
-                    timeLeft--;
+                let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+                let remaining = timeLeft - elapsedTime;
+
+                if (remaining > 0) {
+                    timeLeft = remaining;
                     cont.classList.add("active");
                     updateDisplay();
                 } else {
@@ -115,6 +119,31 @@ function updateClock() {
                     isRunning = false;
                 }
             }, 1000);
+
+            document.addEventListener("visibilitychange", () => {
+                if (document.hidden) {
+                    clearInterval(timer); // Pause timer when tab is hidden
+                } else if (isRunning) {
+                    startTime = Date.now() - (timeLeft * 1000 - (Date.now() - startTime)); // Adjust for lost time
+                    timer = setInterval(() => {
+                        let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+                        let remaining = timeLeft - elapsedTime;
+
+                        if (remaining > 0) {
+                            timeLeft = remaining;
+                            cont.classList.add("active");
+                            updateDisplay();
+                        } else {
+                            clearInterval(timer);
+                            alert('Time is up!');
+                            let sound = new Audio("tick.mp3"); 
+                            sound.play();
+                            cont.classList.remove("active");
+                            isRunning = false;
+                        }
+                    }, 1000);
+                }
+            });
         }
     });
 
